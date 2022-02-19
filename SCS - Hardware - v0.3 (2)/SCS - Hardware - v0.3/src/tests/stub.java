@@ -9,18 +9,18 @@ public class stub implements ElectronicScaleObserver {
 	private boolean overload;
 	private boolean outOfOverload;
 	
-	void weightChanged(ElectronicScale scale, double weightInGrams)
+	public void weightChanged(ElectronicScale scale, double weightInGrams)
 	{
 		weight = weightInGrams;
 	}
 	
-	void overload(ElectronicScale scale)
+	public void overload(ElectronicScale scale)
 	{
 		overload = true;
 		outOfOverload = false;
 	}
 	
-	void outOfOverload(ElectronicScale scale);
+	public void outOfOverload(ElectronicScale scale)
 	{
 		outOfOverload = true;
 		overload = false;
