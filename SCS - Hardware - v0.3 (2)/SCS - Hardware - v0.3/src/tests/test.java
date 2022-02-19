@@ -22,10 +22,58 @@ public class test {
 		
 	}
 	
+	@Test
+	public void testElectronicScale()
+	{
+		
+	}
 	
+	@Test
+	public void testGetWeightLimit()
+	{
+		
+	}
 	
+	@Test
+	public void testGetCurrentWeight()
+	{
+		
+	}
 	
+	@Test
+	public void testGetSensitivity()
+	{
+		
+	}
 	
+	@Test
+	public void testAdd()
+	{
+		
+	}
+	
+	@Test
+	public void testRemove()
+	{
+		
+	}
+	
+	@Test
+	public void testNotifyOverload()
+	{
+		
+	}
+	@Test
+	public void testNotifyOutOfOverload()
+	{
+		
+	}
+	
+	@Test
+	public void testNotifyWeightChanged()
+	{
+		
+	}
 	
 	
 	//Tear down - Called after every test method
