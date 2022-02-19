@@ -15,7 +15,12 @@ public class test {
 	}
 
 	
-	
+	//template
+	@Test
+	public void test ()
+	{
+		
+	}
 	
 	
 	
