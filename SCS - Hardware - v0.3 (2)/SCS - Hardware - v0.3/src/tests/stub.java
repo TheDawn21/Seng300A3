@@ -1,5 +1,8 @@
 package tests;
 
-public class stub {
+import org.junit.Test;
+import java.util.*;
+
+public class stub implements ElectronicScaleObserver {
 
 }
