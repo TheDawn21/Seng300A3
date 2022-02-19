@@ -2,11 +2,10 @@ package tests;
 
 import org.lsmr.selfcheckout.Item;
 
-public class pear extends Item
+public class apple extends Item
 {
-
-	pear()
+	apple()
 	{
-		super(2);
+		super(4);
 	}
 }

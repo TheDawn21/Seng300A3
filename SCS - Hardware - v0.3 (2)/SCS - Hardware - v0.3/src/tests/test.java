@@ -8,16 +8,7 @@ import org.lsmr.selfcheckout.Item;
 import org.lsmr.selfcheckout.devices.*;
 
 public class test {
-	private List<String> list;
-	/*
-	//template
-	@Test
-	public void test ()
-	{
-		
-	}
-	*/
-	
+
 	@Test
 	public void testElectronicScale()
 	{
@@ -134,8 +125,10 @@ public class test {
 	@Test
 	public void testGetSensitivity()
 	{
-		assertTrue("",false);
+		ElectronicScale a = new ElectronicScale(10,1);
+		assertTrue("Sensitivity is incorrect",1==(int)a.getSensitivity());
 	}
+	
 	
 	@Test
 	public void testAdd() throws OverloadException
@@ -219,7 +212,81 @@ public class test {
 	@Test
 	public void testRemove()
 	{
-		assertTrue("",false);
+		ElectronicScale a = new ElectronicScale(10,1);
+		a.endConfigurationPhase();
+		pear b = new pear();
+		apple c = new apple();
+		a.add(c);
+		a.add(b);
+		a.remove(b);
+		assertTrue("Did not notify weightchanged ",true);
+	}
+	
+	@Test 
+	public void testRemove2()
+	{
+		ElectronicScale a = new ElectronicScale(10,1);
+		a.forceErrorPhase(); 
+		pear b = new pear();
+		try
+		{
+			a.remove(b);
+		}
+		catch(SimulationException ex)
+		{
+			assertTrue("Expected error thrown", true);
+			return;
+		}
+		assertTrue("Expected error not thrown", false);
+	}
+	
+	@Test
+	public void testRemove3()
+	{
+		ElectronicScale a = new ElectronicScale(10,1);
+		pear b = new pear();
+		try
+		{
+			a.remove(b);
+		}
+		catch(SimulationException ex)
+		{
+			assertTrue("Expected error thrown", true);
+			return;
+		}
+		assertTrue("Expected error not thrown", false);
+	}
+
+	@Test
+	public void testRemove4()
+	{
+		ElectronicScale a = new ElectronicScale(10,1);
+		a.endConfigurationPhase();
+		pear b = new pear();
+		try
+		{
+			a.remove(b);
+		}
+		catch(SimulationException ex)
+		{
+			assertTrue("Expected error thrown", true);
+			return;
+		}
+		assertTrue("Expected error not thrown", false);
+	}
+	
+	@Test 
+	public void testRemove5()
+	{
+		ElectronicScale a = new ElectronicScale(5,1);
+		a.endConfigurationPhase();
+		pear b = new pear();
+		apple c = new apple();
+		
+		a.add(b);
+		a.add(c);
+		a.remove(c);
+		assertTrue("Did not notify outofoverload", true);
 	}
 	
 	@Test
