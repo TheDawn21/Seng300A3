@@ -292,17 +292,22 @@ public class test {
 	@Test
 	public void testNotifyOverload()
 	{
+		ElectronicScale a = new ElectronicScale(10,1);
+
 		assertTrue("",false);
 	}
 	@Test
 	public void testNotifyOutOfOverload()
 	{
+		ElectronicScale a = new ElectronicScale(10,1);
+		
 		assertTrue("",false);
 	}
 	
 	@Test
 	public void testNotifyWeightChanged()
 	{
+		ElectronicScale a = new ElectronicScale(10,1);
 		assertTrue("",false);
 	}
 	
