@@ -3,7 +3,7 @@ package tests;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.*;
-import org.lsmr.selfcheckout.devices.ElectronicScale;
+import org.lsmr.selfcheckout.devices.*;
 
 public class test {
 	private List<String> list;
@@ -35,62 +35,78 @@ public class test {
 	@Test
 	public void testElectronicScale2()
 	{
-		new ElectronicScale(0,1);
-	
+		try 
+		{
+			ElectronicScale a  =new ElectronicScale(0,1);
+		}
+		catch(SimulationException ex)
+		{
+			assertTrue("Expected error thrown",true);
+			return;
+		}
+		assertTrue("Expected error not thrown", false);
 	}
 	
 	@Test
 	public void testElectronicScale3()
 	{
-		new ElectronicScale(1,0);
-	
+			try 
+			{
+				ElectronicScale a = new ElectronicScale(1,0);
+			}
+			catch(SimulationException ex)
+			{
+				assertTrue("Expected error thrown",true);
+				return;
+			}
+		assertTrue("Expected error not thrown", false);
 	}
 	
 	@Test
 	public void testGetWeightLimit()
 	{
-		
+		assertTrue("",false);
 	}
 	
 	@Test
 	public void testGetCurrentWeight()
 	{
-		
+		assertTrue("",false);
 	}
 	
 	@Test
 	public void testGetSensitivity()
 	{
-		
+		assertTrue("",false);
 	}
 	
 	@Test
 	public void testAdd()
 	{
-		
+		assertTrue("",false);
 	}
 	
 	@Test
 	public void testRemove()
 	{
-		
+		assertTrue("",false);
 	}
 	
 	@Test
 	public void testNotifyOverload()
 	{
-		
+		assertTrue("",false);
 	}
 	@Test
 	public void testNotifyOutOfOverload()
 	{
-		
+		assertTrue("",false);
 	}
 	
 	@Test
 	public void testNotifyWeightChanged()
 	{
-		
+		assertTrue("",false);
 	}
 	
 }
