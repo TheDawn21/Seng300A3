@@ -7,14 +7,6 @@ import java.util.*;
 public class test {
 	private List<String> list;
 	
-	//Set up - Called before every test method
-	@Before 
-	public void setUp()
-	{
-		list = new ArrayList<String>();
-	}
-
-	
 	//template
 	@Test
 	public void test ()
@@ -75,11 +67,4 @@ public class test {
 		
 	}
 	
-	
-	//Tear down - Called after every test method
-	@After 
-	public void tearDown()
-	{
-		list = null;
-	}
 }
