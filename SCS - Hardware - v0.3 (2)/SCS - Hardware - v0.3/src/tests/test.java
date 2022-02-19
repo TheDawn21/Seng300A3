@@ -6,13 +6,14 @@ import java.util.*;
 
 public class test {
 	private List<String> list;
-	
+	/*
 	//template
 	@Test
 	public void test ()
 	{
 		
 	}
+	*/
 	
 	@Test
 	public void testElectronicScale()
