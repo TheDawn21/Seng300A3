@@ -76,21 +76,60 @@ public class test {
 	{
 		ElectronicScale a = new ElectronicScale(10,1);
 		a.endConfigurationPhase();
-		assertTrue("", 0==a.getCurrentWeight());
+		assertTrue("Current Weight not accurate", 0==(int)a.getCurrentWeight());
 	}
 	
 	@Test
-	public void testGetCurrentWeight2()
+	public void testGetCurrentWeight2() throws OverloadException
 	{
-		assertTrue("",false);
+		ElectronicScale a = new ElectronicScale(10,1);
+		a.forceErrorPhase();
+		try
+		{
+			a.getCurrentWeight();
+		}
+		catch(SimulationException ex)
+		{
+			assertTrue("Expected error was thrown", true);
+			return;
+		}
+		assertTrue("Expected error not thrown",false);
 	}
 	
 	@Test
-	public void testGetCurrentWeight3()
+	public void testGetCurrentWeight3() throws OverloadException
 	{
-		assertTrue("",false);
+		ElectronicScale a = new ElectronicScale(10,1);
+		try
+		{
+			a.getCurrentWeight();
+		}
+		catch(SimulationException ex)
+		{
+			assertTrue("Expected error thrown", true);
+			return;
+		}
+		assertTrue("Expected error not thrown",false);
 	}
-	
+
+	@Test
+	public void testGetCurrentWeight4() throws OverloadException
+	{
+		ElectronicScale a = new ElectronicScale(1,1);
+		a.endConfigurationPhase();
+		pear b = new pear();
+		a.add(b);
+		try
+		{
+			a.getCurrentWeight();
+		}
+		catch(OverloadException ex)
+		{
+			assertTrue("Expected error thrown", true);
+			return;
+		}
+		assertTrue("Expected error not thrown", false);
+	}
 	
 	@Test
 	public void testGetSensitivity()
